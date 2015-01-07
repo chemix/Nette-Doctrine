@@ -2,6 +2,7 @@
 
 namespace App\Presenters;
 
+use App\Article;
 use Nette,
 	App\Model;
 
@@ -12,9 +13,17 @@ use Nette,
 class HomepagePresenter extends BasePresenter
 {
 
+	/**
+	 * @inject
+	 * @var \Kdyby\Doctrine\EntityManager
+	 */
+	public $EntityManager;
+
 	public function renderDefault()
 	{
-		$this->template->anyVariable = 'any value';
+		$dao = $this->EntityManager->getDao(Article::getClassName());
+//		dump($dao->findAll());
+		$this->template->articles = $dao->findAll();
 	}
 
 }

@@ -1,0 +1,9 @@
+parameters:
+
+
+doctrine:
+    user: doctrine
+    password: kreslo
+    dbname: doctrine_devel
+    metadata:
+        App: %appDir%

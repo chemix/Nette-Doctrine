@@ -22,7 +22,7 @@ nette:
 
 
 services:
-	- App\Model\UserManager
+#	- App\Model\UserManager
 	router: App\RouterFactory::createRouter
 
 extensions:
@@ -30,10 +30,3 @@ extensions:
 	events: Kdyby\Events\DI\EventsExtension
 	annotations: Kdyby\Annotations\DI\AnnotationsExtension
 	doctrine: Kdyby\Doctrine\DI\OrmExtension
-
-doctrine:
-    user: doctrine
-    password: kreslo
-    dbname: doctrine_devel
-    metadata:
-        App: %appDir%
